@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="525.0" prefWidth="1161.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <Label layoutX="37.0" layoutY="75.0" prefHeight="66.0" prefWidth="408.0" text="Inventory Management System">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label layoutX="37.0" layoutY="199.0" text="Parts">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="addPart" layoutX="369.0" layoutY="426.0" mnemonicParsing="false" onAction="#toAddPart" text="Add">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="partTable" layoutX="37.0" layoutY="220.0" prefHeight="200.0" prefWidth="527.0">
+        <columns>
+          <TableColumn fx:id="partID" editable="false" prefWidth="70.0" text="Part ID" />
+          <TableColumn fx:id="partName" editable="false" prefWidth="120.0" text="Part Name" />
+          <TableColumn fx:id="partInventory" editable="false" prefWidth="143.0" text="Inventory Level" />
+          <TableColumn fx:id="partPrice" editable="false" prefWidth="193.0" text="Price/Cost per Unit" />
+        </columns>
+      </TableView>
+      <TableView fx:id="productTable" layoutX="598.0" layoutY="220.0" prefHeight="200.0" prefWidth="527.0">
+         <columns>
+            <TableColumn fx:id="productID" editable="false" prefWidth="78.0" text="Product ID" />
+            <TableColumn fx:id="productName" editable="false" prefWidth="145.0" text="Product Name" />
+            <TableColumn fx:id="productInventory" editable="false" prefWidth="161.0" text="Inventory Level" />
+            <TableColumn fx:id="productPrice" editable="false" prefWidth="142.0" text="Price/Cost per Unit" />
+         </columns>
+      </TableView>
+      <Label fx:id="TheLabel1" layoutX="598.0" layoutY="196.0" prefHeight="27.0" prefWidth="76.0" text="Products">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="modPart" layoutX="425.0" layoutY="426.0" mnemonicParsing="false" onAction="#toModifyPart" text="Modify">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="deletePart" layoutX="501.0" layoutY="426.0" mnemonicParsing="false" onAction="#deletePart" text="Delete">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="930.0" layoutY="426.0" mnemonicParsing="false" onAction="#toAddProduct" text="Add">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="986.0" layoutY="426.0" mnemonicParsing="false" onAction="#toModifyProduct" text="Modify">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="1062.0" layoutY="426.0" mnemonicParsing="false" onAction="#deleteProduct" text="Delete">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchPartText" layoutX="345.0" layoutY="187.0" onKeyTyped="#searchPart" prefHeight="25.0" prefWidth="219.0" promptText="Search by Part ID or Name">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="searchProductText" layoutX="906.0" layoutY="186.0" onKeyTyped="#searchProduct" prefHeight="25.0" prefWidth="219.0" promptText="Search by Product ID or Name">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Button layoutX="1072.0" layoutY="480.0" mnemonicParsing="false" onAction="#exitProgram" text="Exit">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="noPartFound" layoutX="345.0" layoutY="161.0" opacity="0.0" prefHeight="5.0" prefWidth="160.0" text="Error: No Part Found" textFill="#fc0000">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label fx:id="noProductFound" layoutX="906.0" layoutY="161.0" opacity="0.0" prefHeight="26.0" prefWidth="192.0" text="Error: No Product Found" textFill="#fc0000">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>
